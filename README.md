@@ -56,3 +56,13 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 ```
+
+## 웹 보안 무력화
+webSecurity: false 추가
+```
+new BrowserWindow({
+    webPreferences: { 
+        webSecurity: false 
+    },
+});
+```
