@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <title>Hello World!</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+  <!-- Title: <input id="title"/> -->
+  <div class="gnb">
+    <a href="index.html">home</a>
+    <a href="video.html">video</a>
+  </div>
+  <div class="container">
+    <button id="select" type="button">파일 선택</button>
+    <textarea name="json" id="textarea" disabled cols="30" rows="10"></textarea>
+    <button id="save">저장</button>
+  </div>
+  <script src="../renderer.js"></script>
+</body>
+
+</html>
