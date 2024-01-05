@@ -130,7 +130,7 @@ document.getElementById('button').addEventListener('click', async () => {
 });
 ```
 
-## 파일 읽기/쓰기/저장
+## 파일 읽기/쓰기
 ### 파일 읽기
 - main.js
 ``` js
