@@ -69,9 +69,8 @@ new BrowserWindow({
 });
 ```
 
-## 파일 읽기/쓰기/저장
-### Inter-Process Communication
-> 프로세스 간 통신(단방향)
+## Inter-Process Communication(프로세스 간 통신)
+### 단방향
 1. main.js
 ``` js
 const { ipcMain } = require('electron/main')
@@ -98,13 +97,7 @@ document.getElementById('button').addEventListener('click', () => {
 });
 ```
 
-<br>
-
----
-
-<br>
-
-> 프로세스 간 통신(양방향)
+### 양방향
 1. main.js
 ``` js
 const { app, ipcMain } = require('electron/main')
@@ -137,13 +130,9 @@ document.getElementById('button').addEventListener('click', async () => {
 });
 ```
 
-<br>
-
----
-
-<br>
-
-> 파일 읽기
+## 파일 읽기/쓰기/저장
+### 파일 읽기
+- main.js
 ``` js
 const { dialog } = require('electron');
 const fs = require('node:fs');
@@ -163,4 +152,18 @@ if (!res.canceled) {
     const file = fs.readFileSync(filePath, 'utf-8');
     console.log(file) // 파일 내용
 }
+```
+
+### 파일 쓰기
+- main.js
+```
+const buildPath = `${__dirname}/build`; // 저장할 경로
+
+if(!fs.existsSync(buildPath)){ // 저장할 디렉토리 있는지 확인
+    fs.mkdirSync(buildPath); // 저장할 디렉토리가 없으면 디렉토리 생성
+}
+
+fs.writeFileSync(`${buildPath}/test.json`, JSON.stringify({ // 저장항 경로에 test.json 파일 생성
+    "name": "1rrock"
+}));
 ```
