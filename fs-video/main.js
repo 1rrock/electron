@@ -18,6 +18,7 @@ function createWindow() {
         { name: 'json', extensions: ['json'] }
       ]
     });
+    console.log(res)
 
     if (!res.canceled) {
       const filePath = res.filePaths[0]
